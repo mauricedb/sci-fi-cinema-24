@@ -1,11 +1,19 @@
-'use client'
+'use client';
 
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Film, Rocket, Zap } from 'lucide-react'
-import Link from "next/link"
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Film, Rocket, Zap } from 'lucide-react';
+import Link from 'next/link';
+import heroImage from './hero-image.webp';
 
 export function LandingPageComponent() {
   return (
@@ -16,16 +24,28 @@ export function LandingPageComponent() {
           <span className="ml-2 text-lg font-bold">SciFi Flix</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
             Features
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
             Pricing
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
             About
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
             Contact
           </Link>
         </nav>
@@ -40,24 +60,28 @@ export function LandingPageComponent() {
                     Explore the Universe of Sci-Fi Cinema
                   </h1>
                   <p className="mx-auto max-w-[700px] text-blue-200 md:text-xl">
-                    Dive into a vast collection of popular science fiction movies. From classic space operas to
-                    mind-bending time travels, we've got it all.
+                    Dive into a vast collection of popular science fiction
+                    movies. From classic space operas to mind-bending time
+                    travels, we&apos;ve got it all.
                   </p>
                 </div>
                 <div className="space-x-4">
-                  <Button className="bg-white text-blue-900 hover:bg-blue-100">Get Started</Button>
-                  <Button variant="outline" className="text-white border-white hover:bg-white hover:text-blue-900">
+                  <Button className="bg-white text-blue-900 hover:bg-blue-100">
+                    Get Started
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="text-white border-white hover:bg-white hover:text-blue-900"
+                  >
                     Learn More
                   </Button>
                 </div>
               </div>
               <div className="flex justify-center lg:justify-end">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Futuristic sci-fi cityscape"
-                  width={600}
-                  height={400}
-                  className="rounded-lg object-cover"
+                  src={heroImage}
+                  alt="Hero image"
+                  placeholder="blur"
                   priority
                 />
               </div>
@@ -66,7 +90,9 @@ export function LandingPageComponent() {
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-blue-900">Choose Your Plan</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-blue-900">
+              Choose Your Plan
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="border-blue-200">
                 <CardHeader>
@@ -92,19 +118,25 @@ export function LandingPageComponent() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-blue-900 text-white hover:bg-blue-800">Subscribe</Button>
+                  <Button className="w-full bg-blue-900 text-white hover:bg-blue-800">
+                    Subscribe
+                  </Button>
                 </CardFooter>
               </Card>
               <Card className="border-blue-500 shadow-lg">
                 <CardHeader>
                   <div className="flex justify-between items-center">
                     <CardTitle className="text-blue-900">Premium</CardTitle>
-                    <Badge className="bg-blue-500 text-white">Most Popular</Badge>
+                    <Badge className="bg-blue-500 text-white">
+                      Most Popular
+                    </Badge>
                   </div>
                   <CardDescription>For enthusiasts</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-5xl font-bold text-blue-500 animate-pulse">$14.99</div>
+                  <div className="text-5xl font-bold text-blue-500 animate-pulse">
+                    $14.99
+                  </div>
                   <div className="text-sm text-gray-500">per month</div>
                   <ul className="mt-4 space-y-2">
                     <li className="flex items-center">
@@ -122,7 +154,9 @@ export function LandingPageComponent() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-blue-500 text-white hover:bg-blue-400">Subscribe</Button>
+                  <Button className="w-full bg-blue-500 text-white hover:bg-blue-400">
+                    Subscribe
+                  </Button>
                 </CardFooter>
               </Card>
               <Card className="border-blue-200">
@@ -149,7 +183,9 @@ export function LandingPageComponent() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-blue-900 text-white hover:bg-blue-800">Subscribe</Button>
+                  <Button className="w-full bg-blue-900 text-white hover:bg-blue-800">
+                    Subscribe
+                  </Button>
                 </CardFooter>
               </Card>
             </div>
@@ -158,8 +194,13 @@ export function LandingPageComponent() {
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-blue-900 text-white">
         <p className="text-xs text-blue-200">
-          © 2023 SciFi Flix. All rights reserved. Movie data provided by{" "}
-          <a href="https://www.themoviedb.org/" className="hover:underline underline-offset-2" target="_blank" rel="noopener noreferrer">
+          © 2023 SciFi Flix. All rights reserved. Movie data provided by{' '}
+          <a
+            href="https://www.themoviedb.org/"
+            className="hover:underline underline-offset-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             The Movie Database (TMDB)
           </a>
           .
@@ -174,5 +215,5 @@ export function LandingPageComponent() {
         </nav>
       </footer>
     </div>
-  )
+  );
 }
