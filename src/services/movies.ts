@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma';
+import { Prisma } from '@prisma/client';
 
 /**
  * Fetches science fiction movies from the database
@@ -25,3 +26,30 @@ export async function getSciFiMovies() {
   });
   return movies;
 }
+
+export async function getMovieById(id: number) {
+  try {
+    const movie = await prisma.movie.findUnique({
+      where: {
+        id: id,
+      },
+      include: {
+        genres: true,
+        directors: true,
+        actors: true,
+      },
+    });
+
+    if (!movie) {
+      throw new Error('Movie not found');
+    }
+
+    return movie;
+  } catch (error) {
+    console.error('Error fetching movie:', error);
+    throw error;
+  }
+}
+
+// Type for the returned data
+export type MovieWithDetails = Prisma.PromiseReturnType<typeof getMovieById>;
