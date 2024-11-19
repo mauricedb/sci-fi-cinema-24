@@ -66,9 +66,11 @@ export function LandingPageComponent() {
                   </p>
                 </div>
                 <div className="space-x-4">
-                  <Button className="bg-white text-blue-900 hover:bg-blue-100">
-                    Get Started
-                  </Button>
+                  <Link href="/sci-fi-movies">
+                    <Button className="bg-white text-blue-900 hover:bg-blue-100">
+                      Get Started
+                    </Button>
+                  </Link>
                   <Button
                     variant="outline"
                     className="text-white border-white hover:bg-white hover:text-blue-900"
