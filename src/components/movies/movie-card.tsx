@@ -1,6 +1,7 @@
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Movie } from '@prisma/client';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface MovieCardProps {
   movie: Movie;
@@ -45,9 +46,11 @@ export function MovieCard({ movie }: MovieCardProps) {
         className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 z-30
         opacity-0 group-hover:opacity-100"
       >
-        <button className="bg-red-600 text-white px-6 py-2 rounded-md font-semibold hover:bg-red-700 transition-colors">
-          READ MORE
-        </button>
+        <Link href={`/movies/${movie.id}`}>
+          <button className="bg-red-600 text-white px-6 py-2 rounded-md font-semibold hover:bg-red-700 transition-colors">
+            READ MORE
+          </button>
+        </Link>
       </CardFooter>
     </Card>
   );
