@@ -53,3 +53,48 @@ export async function getMovieById(id: number) {
 
 // Type for the returned data
 export type MovieWithDetails = Prisma.PromiseReturnType<typeof getMovieById>;
+
+/**
+ * Fetches all available genres from the database
+ */
+export async function getAllGenres() {
+  return prisma.genre.findMany({
+    orderBy: {
+      name: 'asc',
+    },
+  });
+}
+
+/**
+ * Updates a movie's details in the database
+ */
+export async function updateMovie(
+  id: number,
+  data: {
+    title: string;
+    overview: string;
+    releaseDate: Date;
+    genreIds: number[];
+  }
+) {
+  try {
+    const movie = await prisma.movie.update({
+      where: { id },
+      data: {
+        title: data.title,
+        overview: data.overview,
+        releaseDate: data.releaseDate,
+        genres: {
+          set: data.genreIds.map((id) => ({ id })),
+        },
+      },
+      include: {
+        genres: true,
+      },
+    });
+    return movie;
+  } catch (error) {
+    console.error('Error updating movie:', error);
+    throw error;
+  }
+}
